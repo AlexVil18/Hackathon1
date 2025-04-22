@@ -22,10 +22,17 @@ body {
   }
   
   /* 🔹 Persona 4: Servicios */
-  #servicios {
-    /* Estilos para la sección de servicios/testimonios */
+  #servicios{
+    background-color: #D06200;
+  }
+
+  .col{
+    background-color:#5B0000 ;
+    border-color: black 1000px;
   }
   /* 🔤 Tipografías */
+
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
