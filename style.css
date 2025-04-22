@@ -25,6 +25,25 @@ body {
   #servicios {
     /* Estilos para la sección de servicios/testimonios */
   }
+  /* 🔤 Tipografías */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #222;
+  }
+  
+  /* Títulos principales y subtítulos */
+  h1, h2, h3, h4, h5, h6, .titulo, .subtitulo {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+  }
+  
+  /* Parrafos, botones, inputs, texto general */
+  p, span, a, li, input, button, label {
+    font-family: 'Roboto', sans-serif;
+  }  
   
   /* 🔹 Persona 5: Footer + Contacto */
   footer {
