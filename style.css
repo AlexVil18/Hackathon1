@@ -1,33 +1,96 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔹 Persona 1: Header + Navbar + Hero */
+header {
+  /* Estilos para el header */
+}
+
+/* 🔹 Persona 2: Productos */
+#productos {
+  /* Estilos para la grilla de productos */
+}
+
+/* 🔹 Persona 3: Carrito */
+#carrito {
+  /* Estilos para el carrito flotante o modal */
+}
+
+/* 🔹 Persona 4: Servicios */
+#servicios {
+  /* Estilos para la sección de servicios/testimonios */
+}
+
+/* 🔹 Persona 5: Footer + Contacto */
+footer {
+  background-color: #D06200;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column { /*Editamos todas las columnas*/
+  flex: 1;        /*Las columnas se distribuyen equitativamente*/
+  min-width: 300px; /*tamaño minimo de las columnas*/
+  margin: 10px;     
+}
+
+.footer-column h4 { /*Editamos el h4 osea todos los titulos */
+  font-size: 1rem;
+  margin-bottom: 1rem; /*1 rem equivale a 16px para que se vea responsive*/
+  color: #fff9e3;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;  /*Elimina viñetas de la lista*/
+  padding: 0;         /*Elimina espacios predeterminados de la lista*/
+}
+
+.footer-column ul li {
+  margin: 8px 0;    
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none; /*Elimina el subrayado del link*/
+  font-size: 14px;
+  transition: color 0.3s ease; /*Efecto al pasar el cursos*/
+}
+
+.footer-column ul li a:hover {
+  color: #ee6073;   /*Cambia de color con el efecto*/
+}
+
+.logos {
+  display: flex;   /*Propiedad flexible*/
+  gap: 1rem;    /*Espacio entre los logos*/
+}
+
+.logos li img {
+  width: 40px;   /*Tamaño de los logos*/
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* 🔹 Persona 1: Header + Navbar + Hero */
-  header {
-    /* Estilos para el header */
+
+  .footer-column {
+    text-align: center;
+    margin-bottom: 20px;
   }
-  
-  /* 🔹 Persona 2: Productos */
-  #productos {
-    /* Estilos para la grilla de productos */
-  }
-  
-  /* 🔹 Persona 3: Carrito */
-  #carrito {
-    /* Estilos para el carrito flotante o modal */
-  }
-  
-  /* 🔹 Persona 4: Servicios */
-  #servicios {
-    /* Estilos para la sección de servicios/testimonios */
-  }
-  
-  /* 🔹 Persona 5: Footer + Contacto */
-  footer {
-    /* Estilos para el pie de página */
-  }
-  
+}
