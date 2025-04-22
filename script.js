@@ -62,7 +62,7 @@ function determinarTipoProducto(nombre) {
   return 'accesorio';
 }
 
-// Dentro de agregarProductoAlCarrito:
+
 const tipo = determinarTipoProducto(nombre);
 const esPrenda = ['zapato', 'camiseta', 'short'].includes(tipo);
 
