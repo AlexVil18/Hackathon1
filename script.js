@@ -88,7 +88,7 @@ if (esPrenda) {
     precio,
     tipo,
     cantidad: 1,
-    esPrenda // Nueva propiedad booleana
+    esPrenda 
   };
 
   // Solo agregar tallas y género si es prenda
