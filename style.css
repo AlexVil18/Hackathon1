@@ -1,15 +1,43 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* 🔹 Persona 1: Header + Navbar + Hero */
-  header {
-    /* Estilos para el header */
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔹 Persona 1: Header + Navbar + Hero */
+header {
+  /* Estilos para el header */
+  background: #d06200;
+}
+
+.bg-victory {
+  background-color: #730e20;
+}
+.bg-victory .navbar-brand,
+.bg-victory .nav-link {
+  color: white !important;
+}
+.bg-victory .imgWhatsapp img {
+  height: 2.5em;
+  width: auto;
+  transition: all 0.3s;
+}
+.bg-victory .imgWhatsapp img:hover{
+  transform: scale(1.2);
+}
+.bg-victory .imgWhatsapp{
+  cursor: pointer;
+}
+
+
+
+
+.titulo1, .subtitulo1{
+  text-align: center;
+  color: #ffffff;
+}
   
   /* 🔹 Persona 2: Productos */
   #productos {
