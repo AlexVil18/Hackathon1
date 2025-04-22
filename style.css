@@ -1,0 +1,33 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 🔹 Persona 1: Header + Navbar + Hero */
+  header {
+    /* Estilos para el header */
+  }
+  
+  /* 🔹 Persona 2: Productos */
+  #productos {
+    /* Estilos para la grilla de productos */
+  }
+  
+  /* 🔹 Persona 3: Carrito */
+  #carrito {
+    /* Estilos para el carrito flotante o modal */
+  }
+  
+  /* 🔹 Persona 4: Servicios */
+  #servicios {
+    /* Estilos para la sección de servicios/testimonios */
+  }
+  
+  /* 🔹 Persona 5: Footer + Contacto */
+  footer {
+    /* Estilos para el pie de página */
+  }
+  
