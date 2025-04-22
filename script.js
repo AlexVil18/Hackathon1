@@ -9,6 +9,7 @@
 // 🔹 Persona 3: Lógica del carrito
 // (agregar, eliminar, calcular total)
 // Variables globales
+// Variables globales
 const carrito = [];
 let cartModal;
 let goalModal;
