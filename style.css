@@ -11,10 +11,63 @@ body {
     /* Estilos para el header */
   }
   
+
+
   /* 🔹 Persona 2: Productos */
-  #productos {
-    /* Estilos para la grilla de productos */
-  }
+/* Orangeﾠ#FB8500ﾠNaranja vibrante, muy llamativo
+Pumpkin Spiceﾠ#D06200ﾠNaranja tostado, cálido y otoñal
+Burnt Amberﾠ#A54000ﾠMarrón rojizo profundo
+Cinnamon Flameﾠ#7E1C00ﾠRojo canela intenso
+Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
+
+ /* Color fondo productos */
+
+ .bg-1{
+  background-color: #D06200;
+ }
+ /* Color titulo  productos */
+
+ .bg-2{
+  color: #f5f5f5;
+ }
+
+ /* Color Boton */
+
+ .btn-primary{
+  background-color: #D06200;
+  border-color: #A54000;
+ }
+
+ .btn-primary:hover {
+  background-color: #7E1C00;  /* Cambio color al pasar el mouse*/
+  border-color: #D06200;     
+}
+
+ /* Tamaño imagenes iguales*/
+ .card-img-top {
+  height: 300px; 
+  object-fit: cover;
+}
+
+  /* Animaciones hover y click */
+.producto-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.agregar-carrito {
+  transition: background-color 0.3s ease;
+  
+}
+
+.agregar-carrito:active {
+  transform: scale(0.95);
+  background-color: #A54000; 
+}
   
   /* 🔹 Persona 3: Carrito */
   #carrito {
