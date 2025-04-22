@@ -23,8 +23,26 @@ Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
  /* Color fondo productos */
 
  .bg-1{
-  background-color: #D06200;
+  background: linear-gradient(#FB8500, #D06200,#A54000, #7E1C00); /* Para animación fondo gradient*/
+  background-size: 300% 300%;
+  animation: bg 10s ease infinite;
  }
+
+ /*animación fondo gradient*/
+@keyframes bg{
+  0%{
+      background-position: 0% 50%; 
+  } 
+  50%{
+      background-position: 100% 100%;        
+  }
+  100%{
+      background-position: 0% 50%;
+
+  }
+}
+
+
  /* Color titulo  productos */
 
  .bg-2{
@@ -49,6 +67,10 @@ Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
   object-fit: cover;
 }
 
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
   /* Animaciones hover y click */
 .producto-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -68,6 +90,13 @@ Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
   transform: scale(0.95);
   background-color: #A54000; 
 }
+
+/* Estilos Productos Deportivos */
+
+#productos-Deportivos{
+  background-color: #D06200;
+}
+
   
   /* 🔹 Persona 3: Carrito */
   #carrito {
