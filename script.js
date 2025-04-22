@@ -40,32 +40,47 @@ function agregarProductoAlCarrito(index) {
     producto.querySelector('.card-text.fw-bold').textContent.replace('$', '').replace('.', '')
   );
 
-  // Determinar tipo de producto
-  let tipo = 'otro';
+ // Función mejorada para detectar tipos de productos
+function determinarTipoProducto(nombre) {
   const nombreLower = nombre.toLowerCase();
-  const esPrenda = nombreLower.includes('camiseta') || 
-                   nombreLower.includes('zapato') || 
-                   nombreLower.includes('short') || 
-                   nombreLower.includes('pantalon') ||
-                   nombreLower.includes('conjunto');
+  
+  // Mapeo de tipos y palabras clave
+  const tipos = {
+    zapato: ['zapato', 'zapatilla', 'botín', 'botines'],
+    camiseta: ['camiseta', 'conjunto', 'nba', 'selección'],
+    short: ['short', 'pantalon'],
+    balon: ['balón', 'pelota', 'balon'],
+    proteccion: ['canillera', 'muñequera', 'grip'],
+    raqueta: ['raqueta', 'grip']
+  };
 
-  if (esPrenda) {
-    if (nombreLower.includes('zapato')) tipo = 'zapato';
-    else if (nombreLower.includes('camiseta') || nombreLower.includes('conjunto')) tipo = 'camiseta';
-    else if (nombreLower.includes('short') || nombreLower.includes('pantalon')) tipo = 'short';
-  } else {
-    tipo = 'accesorio'; // Nuevo tipo para productos sin tallas
-  }
-
-  // Configurar tallas solo para prendas
-  let tallas = [];
-  if (esPrenda) {
-    switch(tipo) {
-      case 'zapato': tallas = Array.from({length: 9}, (_, i) => 36 + i); break;
-      case 'camiseta': tallas = ['XS', 'S', 'M', 'L', 'XL']; break;
-      case 'short': tallas = ['S', 'M', 'L', 'XL']; break;
+  for (const [tipo, palabras] of Object.entries(tipos)) {
+    if (palabras.some(palabra => nombreLower.includes(palabra))) {
+      return tipo;
     }
   }
+  return 'accesorio';
+}
+
+// Dentro de agregarProductoAlCarrito:
+const tipo = determinarTipoProducto(nombre);
+const esPrenda = ['zapato', 'camiseta', 'short'].includes(tipo);
+
+// Configurar tallas solo para prendas
+let tallas = [];
+if (esPrenda) {
+  switch(tipo) {
+    case 'zapato':
+      tallas = Array.from({length: 9}, (_, i) => 36 + i);
+      break;
+    case 'camiseta':
+      tallas = ['XS', 'S', 'M', 'L', 'XL'];
+      break;
+    case 'short':
+      tallas = ['S', 'M', 'L', 'XL'];
+      break;
+  }
+}
 
   // Crear item
   const item = {
@@ -183,6 +198,7 @@ function actualizarContadorCarrito() {
 // Función para abrir el modal del carrito
 function abrirModalCarrito() {
   renderizarCarrito();
+  actualizarTotal();
   cartModal.show();
 }
 
