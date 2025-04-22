@@ -26,8 +26,113 @@
 
   <!-- 🔹 Persona 3: Carrito flotante + funcionalidad JS del carrito -->
   <div id="carrito">
-    <!-- Aquí va el icono del carrito, los productos añadidos y su gestión -->
+    <!-- Botón del carrito flotante -->
+  <div id="cart-button" class="cart-floating-button" onclick="abrirModalCarrito()">
+    <img src="img/carrito.png" alt="Carrito">
+    <span id="cart-counter" class="cart-counter">0</span>
   </div>
+
+  <!-- Modal del carrito -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-pumpkin text-white">
+          <h5 class="modal-title">
+            <i class="fas fa-shopping-cart me-2"></i>Tu Carrito
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="lista-carrito" class="mb-3">
+            <!-- Aquí se cargarán dinámicamente los productos -->
+          </div>
+          <div id="carrito-vacio" class="text-center py-4">
+            <i class="fas fa-shopping-basket fa-3x text-muted mb-3"></i>
+            <p>Tu carrito está vacío</p>
+          </div>
+          
+          <!-- Resumen de totales (nuevo) -->
+          <div id="carrito-resumen" class="mt-3 pt-3 border-top">
+            <div class="row align-items-center mb-2">
+              <div class="col">Subtotal:</div>
+              <div class="col-auto" id="subtotal-precio">$0</div>
+            </div>
+            <div class="row align-items-center mb-2" id="descuento-row" style="display: none;">
+              <div class="col text-success">Descuento:</div>
+              <div class="col-auto text-success" id="descuento-precio">-$0</div>
+            </div>
+            <div class="row align-items-center mb-2">
+              <div class="col">Envío:</div>
+              <div class="col-auto" id="envio-precio">$12.000</div>
+            </div>
+            <div class="row align-items-center fw-bold">
+              <div class="col">Total:</div>
+              <div class="col-auto" id="total-precio">$0</div>
+            </div>
+          </div>
+          
+          <!-- Sección de cupones (actualizada) -->
+          <div class="mt-4 pt-3 border-top">
+            <h6 class="mb-3">Cupón de descuento</h6>
+            
+            <!-- Alertas para mensajes de error y éxito -->
+            <div id="cupon-error" class="alert alert-danger py-2 mb-3" style="display: none;">
+              <i class="fas fa-exclamation-circle me-2"></i>
+              <span id="error-mensaje"></span>
+            </div>
+            
+            <div id="cupon-success" class="alert alert-success py-2 mb-3" style="display: none;">
+              <i class="fas fa-check-circle me-2"></i>
+              <span id="success-mensaje"></span>
+            </div>
+            
+            <!-- Cupón aplicado -->
+            <div id="cupon-aplicado" class="bg-light p-3 rounded mb-3" style="display: none;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>Cupón aplicado:</strong> <span id="cupon-descripcion"></span>
+                </div>
+                <button 
+                  class="btn btn-sm btn-outline-danger" 
+                  onclick="removerCupon()">
+                  <i class="fas fa-times"></i> Remover
+                </button>
+              </div>
+            </div>
+            
+            <!-- Input para cupón -->
+            <div id="cupon-input-group" class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Ingresa tu código" id="cupon">
+              <button class="btn btn-outline-primary" type="button" onclick="aplicarCupon()">Aplicar</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+          <button type="button" class="btn btn-cinnamon" onclick="mostrarModalCompra()">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Gol -->
+  <div class="modal fade" id="modal-gol" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center py-5">
+          <div class="goal-animation">
+            <i class="fas fa-futbol fa-5x text-sunburst mb-4"></i>
+          </div>
+          <h2 class="mb-3">¡GOLLLLLL! ⚽🔥</h2>
+          <p class="lead">Gracias por tu compra deportiva</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-sunburst" data-bs-dismiss="modal" onclick="finalizarCompra()">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <!-- 🔹 Persona 4: Sección de servicios + testimonios o beneficios -->
   <section id="servicios">

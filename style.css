@@ -1,52 +1,255 @@
+
+:root {
+  --sunburst-orange: #FB8500;
+  --pumpkin-spice: #D06200;
+  --burnt-amber: #A54000;
+  --cinnamon-flame: #7E1C00;
+  --deep-garnet: #5B0000;
+}
+
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  position: relative;
+}
+
+h1, h2, h3, .navbar-brand {
+  font-family: 'Anton', sans-serif;
+}
+
+.section-title {
+  color: var(--cinnamon-flame);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--sunburst-orange);
+}
+
+/* Utilidades de colores */
+.bg-sunburst { background-color: var(--sunburst-orange) !important; }
+.bg-pumpkin { background-color: var(--pumpkin-spice) !important; }
+.bg-burnt-amber { background-color: var(--burnt-amber) !important; }
+.bg-cinnamon { background-color: var(--cinnamon-flame) !important; }
+.bg-dark-garnet { background-color: var(--deep-garnet) !important; }
+
+.text-sunburst { color: var(--sunburst-orange) !important; }
+.text-pumpkin { color: var(--pumpkin-spice) !important; }
+.text-burnt-amber { color: var(--burnt-amber) !important; }
+.text-cinnamon { color: var(--cinnamon-flame) !important; }
+.text-dark-garnet { color: var(--deep-garnet) !important; }
+
+/* Botones personalizados */
+.btn-sunburst {
+  background-color: var(--sunburst-orange);
+  border-color: var(--sunburst-orange);
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-sunburst:hover {
+  background-color: var(--pumpkin-spice);
+  border-color: var(--pumpkin-spice);
+  color: white;
+}
+
+.btn-cinnamon {
+  background-color: var(--cinnamon-flame);
+  border-color: var(--cinnamon-flame);
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-cinnamon:hover {
+  background-color: var(--burnt-amber);
+  border-color: var(--burnt-amber);
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas de productos */
+.product-card {
+  transition: all 0.3s;
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  min-height: 200px;
+  transition: all 0.3s;
+}
+
+.product-card:hover .product-image {
+  background-color: #f8f8f8 !important;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--burnt-amber);
+  margin-bottom: 1rem;
+}
+
+/* Botón flotante del carrito - MODIFICADO para ser fijo */
+.cart-floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.cart-floating-button img {
+  width: 40px;
+  height: 40px;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545; /* Rojo para resaltar */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+/* Estilo para la imagen del carrito */
+.cart-floating-button img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.carrito-icono {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FB8500; /* Sunburst Orange */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-icono img {
+  width: 50%;
+}
+
+.carrito-icono .badge {
+  position: absolute;
+  top: -10px; /* Ajusta la posición vertical para que quede fuera del círculo */
+  right: -10px; /* Ajusta la posición horizontal para que quede fuera del círculo */
+  background-color: #D06200; /* Pumpkin Spice */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Carrito */
+.cart-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  transition: all 0.3s;
+}
+
+.cart-item:hover {
+  background-color: #f1f1f1;
+}
+
+.cart-item-remove {
+  cursor: pointer;
+  color: #dc3545;
+  transition: all 0.2s;
+}
+
+.cart-item-remove:hover {
+  color: #c82333;
+  transform: scale(1.2);
+}
+
+/* Animación del gol */
+.goal-animation {
+  animation: goalBounce 1s ease infinite alternate;
+}
+
+@keyframes goalBounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+/* Animación flotante para el carrito */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.cart-floating-button {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .cart-floating-button {
+    width: 50px;
+    height: 50px;
   }
   
-  /* 🔹 Persona 1: Header + Navbar + Hero */
-  header {
-    /* Estilos para el header */
+  .cart-floating-button img {
+    width: 28px;
+    height: 28px;
   }
   
-  /* 🔹 Persona 2: Productos */
-  #productos {
-    /* Estilos para la grilla de productos */
+  .cart-counter {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
   }
-  
-  /* 🔹 Persona 3: Carrito */
-  #carrito {
-    /* Estilos para el carrito flotante o modal */
-  }
-  
-  /* 🔹 Persona 4: Servicios */
-  #servicios {
-    /* Estilos para la sección de servicios/testimonios */
-  }
-  /* 🔤 Tipografías */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    color: #222;
-  }
-  
-  /* Títulos principales y subtítulos */
-  h1, h2, h3, h4, h5, h6, .titulo, .subtitulo {
-    font-family: 'Special Gothic Expanded One', sans-serif;
-  }
-  
-  /* Parrafos, botones, inputs, texto general */
-  p, span, a, li, input, button, label {
-    font-family: 'Roboto', sans-serif;
-  }  
-  
-  /* 🔹 Persona 5: Footer + Contacto */
-  footer {
-    /* Estilos para el pie de página */
-  }
-  
+}
