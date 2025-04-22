@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tienda Deportiva</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        <!-- Font Awesome para iconos -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-       
-        <link rel="stylesheet" href="style.css" />
-      </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Deportiva</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-  <!-- 🔹 Persona 1: Header + Navbar + Hero principal -->
   <header>
     <!-- Aquí va el logo, la barra de navegación y el banner inicial -->
+    <nav class="navbar navbar-expand-lg bg-victory">
+      <div class="container-fluid">
+        <div class="imgLogo">
+          <a class="navbar-brand" href="#"><img src="logov.png" alt="Bootstrap" width="90" height="35"></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#productos">Catalago</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Reseñas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#productos">OUTLET🤑</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#futbol">⚽</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#tenis">🎾</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#basquetbol">🏀</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="imgWhatsapp">
+          <a href="footer">
+            <img src="Whatsapp.png" alt="img_logo_whatsapp">
+          </a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+      <h1 class="titulo1">!Equípate para ganar¡🥇 </h1>
+      <br>
+      <h3 class="subtitulo1">La mejor selección de artículos deportivos 🏋🏽‍♀️🥋🤿</h3>
+    </div>
   </header>
 
-  <!-- 🔹 Persona 2: Sección de productos destacados + cards interactivas -->
+
   <section id="productos" class="py-5 bg-1">
     <div class="container">
       <h2 class="text-center mb-5 bg-2">Productos Destacados</h2>
@@ -146,10 +188,183 @@
       </div>
     </div>
   </section>
+  <section id="productos-Deportivos">
+    <div class="container py-5">
 
-  <!-- 🔹 Persona 3: Carrito flotante + funcionalidad JS del carrito -->
-  <div id="carrito">
-    <!-- Botón del carrito flotante -->
+      <!-- Fútbol -->
+      <div class="categoria py-4 bg-2" id="futbol">
+        <h2>Fútbol</h2>
+
+          <div class="row row-cols-1 row-cols-md-4 g-4 py-4">
+         <!-- Fútbol Producto 1 -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes Productos/Futbol 1.jpg" class="card-img-top" alt="Balón de fútbol">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Balón Oficial</h5>
+                <p class="card-text fw-bold">$120.000</p>
+                <p class="card-text">Balón profesional para competencias.</p>
+                
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+        <!-- Fútbol Producto 2 -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes Productos/Futbol 2.jpg" class="card-img-top" alt="Botines">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Botines Nike</h5>
+                <p class="card-text fw-bold">$310.000</p>
+                <p class="card-text">Botines con suela de tracción avanzada.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fútbol Producto 3 -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes Productos/Futbol 3.jpg" class="card-img-top" alt="Camiseta">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Camiseta Selección</h5>
+                <p class="card-text fw-bold">$120.000</p>
+                <p class="card-text">Camiseta oficial edición 2024.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fútbol Producto 4 -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes Productos/Futbol 4.jpg" class="card-img-top" alt="Canilleras">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Canilleras Pro</h5>
+                <p class="card-text fw-bold">$80.000</p>
+                <p class="card-text">Protección ultraligera y resistente.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Básquetbol -->
+      <div class="categoria py-4 bg-2" id="basquetbol">
+        <h2>Básquetbol</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4 py-4">
+
+          <!-- Basquet Producto 1 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Basquet 1.jpg" class="card-img-top" alt="Balón de básquet">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Balón Spalding</h5>
+                <p class="card-text fw-bold">$250.000</p>
+                <p class="card-text">Balón indoor/outdoor de alta calidad.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+           <!-- Basquet Producto 2 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Basquet 2.jpg" class="card-img-top" alt="Zapatillas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Zapatillas Jordan</h5>
+                <p class="card-text fw-bold">$530.000</p>
+                <p class="card-text">Comodidad y agarre para el juego.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+           <!-- Basquet Producto 3 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Basquet 3.jpg" class="card-img-top" alt="Muñequeras">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Muñequeras</h5>
+                <p class="card-text fw-bold">$85.000</p>
+                <p class="card-text">Absorbe el sudor y mejora el rendimiento.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+          <!-- Basquet Producto 4 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Basquet 4.jpg" class="card-img-top" alt="Camiseta NBA">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Camiseta NBA</h5>
+                <p class="card-text fw-bold">$220.000</p>
+                <p class="card-text">Oficial de tu equipo favorito.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Tenis -->
+      <div class="categoria py-4 bg-2" id="tenis">
+        <h2>Tenis</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4 py-4">
+          <!-- Tenis Producto 1 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Tenis 1.jpg" class="card-img-top" alt="Raqueta">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Raqueta Wilson</h5>
+                <p class="card-text fw-bold">$250.000</p>
+                <p class="card-text">Potencia y control para todos los niveles.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+          <!-- Tenis Producto 2 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Tenis 2.jpg" class="card-img-top" alt="Pelotas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Pelotas Penn</h5>
+                <p class="card-text fw-bold">$100.000</p>
+                <p class="card-text">Duraderas y con excelente rebote.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+          <!-- Tenis Producto 3 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Tenis 3.jpg" class="card-img-top" alt="Zapatillas">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Zapatillas Adidas</h5>
+                <p class="card-text fw-bold">$380.000</p>
+                <p class="card-text">Máxima comodidad en todas las superficies.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+            <!-- Tenis Producto 4 -->
+          <div class="col">
+            <div class="card producto-card h-100">
+              <img src="./imagenes Productos/Tenis 4.jpg" class="card-img-top" alt="Grip">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Grip Antideslizante</h5>
+                <p class="card-text fw-bold">$60.000</p>
+                <p class="card-text">Mejora tu agarre y evita lesiones.</p>
+                <button class="btn btn-primary mt-auto agregar-carrito"> 🛒 Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón del carrito flotante -->
   <div id="cart-button" class="cart-floating-button" onclick="abrirModalCarrito()">
     <img src="img/carrito.png" alt="Carrito">
     <span id="cart-counter" class="cart-counter">0</span>
@@ -174,7 +389,7 @@
             <p>Tu carrito está vacío</p>
           </div>
           
-          <!-- Resumen de totales (nuevo) -->
+          <!-- Resumen de totales -->
           <div id="carrito-resumen" class="mt-3 pt-3 border-top">
             <div class="row align-items-center mb-2">
               <div class="col">Subtotal:</div>
@@ -194,7 +409,7 @@
             </div>
           </div>
           
-          <!-- Sección de cupones (actualizada) -->
+          <!-- Sección de cupones -->
           <div class="mt-4 pt-3 border-top">
             <h6 class="mb-3">Cupón de descuento</h6>
             
@@ -255,18 +470,191 @@
       </div>
     </div>
   </div>
-  
 
-  <!-- 🔹 Persona 4: Sección de servicios + testimonios o beneficios -->
   <section id="servicios">
-    <!-- Aquí van los servicios que ofrece la tienda y testimonios -->
+    <div class="container py-5">
+      <h2 class="text-center mb-4">¿Por qué elegirnos? </h2>
+      <h3 class="text-center mb-4">Nuestros Servicios</h3>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card text-center">
+            <div class="fs-1">🚚</div>
+            <h5 class="mt-3">Entrega Rápida</h5>
+            <p>Envío en 24-48 horas a todo el país.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card text-center">
+            <div class="fs-1">🤝</div>
+            <h5 class="mt-3">Atención Personalizada</h5>
+            <p>Te asesoramos para que elijas lo mejor.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card text-center">
+            <div class="fs-1">🔒</div>
+            <h5 class="mt-3">Pagos Seguros</h5>
+            <p>Tus datos están protegidos con nosotros.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card text-center">
+            <div class="fs-1">🛍️</div>
+            <h5 class="mt-3">Retiro en Tienda</h5>
+            <p>Compra online y retira sin costo adicional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="text-center mb-4">Observa algunas opiniones de nuestros clientes</h1>
+
+    <div class="cont_cards container-lg">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 p-3 d-flex justify-content-center">
+          <div class="flip-card" style="width: 18.5rem;">
+            <div class="flip-card-inner">
+        
+              <!-- Cara frontal -->
+              <div class="flip-card-front card">
+                <img src="juan.jpg" class="card-img-top" alt="juan" style="height: 196px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Juan Malagon</h5>
+                  <p class="card-text text-center">Cliente destacado</p>
+                </div>
+              </div>
+        
+              <!-- Cara trasera -->
+              <div class="flip-card-back card">
+                <p>CALIFICACIÓN</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="card-text">
+                  “Necesitaba unos artículos en el menor tiempo posible y aquí los conseguí. En menos de tres días ya todo
+                  estaba en la puerta de mi casa, estoy muy agradecido”
+                </p>
+              </div>
+        
+            </div>
+          </div>
+       </div>
+
+        <div class="col-12 col-md-6 col-lg-4 p-3 d-flex justify-content-center">
+          <div class="flip-card" style="width: 18.5rem;">
+            <div class="flip-card-inner">
+          
+              <!-- Cara frontal -->
+              <div class="flip-card-front card">
+                <img src="andrea.jpg" class="card-img-top" alt="andrea" style="height: 196px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Andrea Garcia</h5>
+                  <p class="card-text text-center">Cliente destacada</p>
+                </div>
+              </div>
+          
+             <!-- Cara trasera -->
+              <div class="flip-card-back card">
+                <p>CALIFICACIÓN</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="card-text">
+                  “En su pagina encontré todo lo que buscaba y a un muy buen precio, quedé encantada con todo lo
+                    que compré 😊”
+                </p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 p-3 d-flex justify-content-center">
+          <div class="flip-card" style="width: 18.5rem;">
+            <div class="flip-card-inner">
+        
+              <!-- Cara frontal -->
+              <div class="flip-card-front card">
+                <img src="viviana.jpg" class="card-img-top" alt="" style="height: 196px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Viviana Quintero</h5>
+                  <p class="card-text text-center">Cliente destacada</p>
+               </div>
+              </div>
+          
+              <!-- Cara trasera -->
+              <div class="flip-card-back card">
+                <p>CALIFICACIÓN</p>
+                <p>⭐⭐⭐⭐</p>
+                <p class="card-text">
+                  “Gracias a su asesoría conseguí el calzado perfecto para mi entrenamiento. ¡Recomendados 100%!”
+                </p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    
   </section>
+  <section>
+    <section class="contact"> 
+      <h2>Contáctanos</h2>
+      <form id="contact-form"> <!--Crea un formulario-->
+        <input type="text" id="name" placeholder="Tu nombre" required> <!--Requiere escribir el nombre-->
+        <input type="email" id="email" placeholder="Tu correo electrónico" required><!--Requiere escribir el correo-->
+        <textarea id="message" placeholder="Tu mensaje" required></textarea> <!--Requiere escribir el mensaje-->
+        <button type="submit">Enviar</button> <!--Botón-->
+       <p id="form-status"></p> <!--Parrafo vacio-->
+      </form>
+    </section>
+      <!--Footer-->
+    <footer>
+      <div class="footer-container"> <!--contenedor de columnas de footer-->
+        <div class="footer-column"> <!--columna 1 footer-->
+          <h4>Redes Sociales</h4>
+      <ul class="logos">
+        <li><a href="#"><img src="instagram.png" alt="insta"></a></li>
+        <li><a href="#"><img src="facebook.png" alt="face"></a></li>
+        <li><a href="#"><img src="tiktok_3116491.png" alt="tiktok"></a></li>
+            
+      </ul>
+      </div>
+        
+    <div class="footer-column"><!--columna 2 footer-->
+         <h4>Enlaces</h4>
+         <ul>
+         <li><a href="terminosycondicionesvictorysport.pdf" download>Términos y Condiciones</a></li>
+        <li><a href="Política de privacidad VictorySport.pdf" download>Política de Privacidad</a></li>
+           <!--El download es para descargar un archivo-->
+      </ul> 
+    </div>
+    
+    <div class="footer-column"> <!--columna 3 footer-->
+         <h4>Medios de Pago</h4>
+      <ul class="logos">
+        <li><img src="visa.png" alt="Visa"></li>
+        <li><img src="mastercard.png" alt="MasterCard"></li>
+        <li><img src="nequi.png" alt="nequi"></li>
+       <li><img src="bancolombia.png" alt="bancolombia"></li>
+     </ul>
+    </div>
+    
+    <div class="footer-column"> <!--columna 4 footer-->
+      <h4>Contacto</h4>
+        <ul>
+           <li><a href="somosvictroysport@gmail.com">somosvictorysport@gmail.com</a></li>
+          <li><a href="tel:+123456789">+1 234 567 89</a></li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer-der"> <!--texto footer debajo de el contenedor-->
+        <p>&copy; 2025 Victory Sport. Todos los derechos reservados.</p>
+      </div>
+    </footer>
 
-  <!-- 🔹 Persona 5: Footer + contacto + optimización general -->
-  <footer>
-    <!-- Aquí va la información de contacto, redes sociales y el pie de página -->
-  </footer>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS personalizado -->
   <script src="script.js"></script>
 </body>
 </html>

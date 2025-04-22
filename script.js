@@ -1,14 +1,3 @@
-// 🔹 Persona 1: Funciones del navbar o scroll del hero
-// (ejemplo: animaciones del banner al cargar)
-
-
-// 🔹 Persona 2: Funciones para productos y agregar al carrito
-// (ejemplo: manejar clicks en botones de productos)
-
-
-// 🔹 Persona 3: Lógica del carrito
-// (agregar, eliminar, calcular total)
-// Variables globales
 // Variables globales
 const carrito = [];
 let cartModal;
@@ -28,7 +17,92 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar los modales de Bootstrap
   cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
   goalModal = new bootstrap.Modal(document.getElementById('modal-gol'));
+
+  inicializarBotonesCarrito();
 });
+
+// Función para inicializar los eventos de los botones "Agregar al carrito"
+function inicializarBotonesCarrito() {
+  const botones = document.querySelectorAll('.agregar-carrito');
+  botones.forEach((boton, index) => {
+    boton.addEventListener('click', () => {
+      agregarProductoAlCarrito(index);
+    });
+  });
+}
+
+// Función para agregar un producto al carrito
+function agregarProductoAlCarrito(index) {
+  const productos = document.querySelectorAll('.producto-card');
+  const producto = productos[index];
+  const nombre = producto.querySelector('.card-title').textContent;
+  const precio = parseInt(
+    producto.querySelector('.card-text.fw-bold').textContent.replace('$', '').replace('.', '')
+  );
+
+  // Determinar tipo de producto
+  let tipo = 'otro';
+  const nombreLower = nombre.toLowerCase();
+  const esPrenda = nombreLower.includes('camiseta') || 
+                   nombreLower.includes('zapato') || 
+                   nombreLower.includes('short') || 
+                   nombreLower.includes('pantalon') ||
+                   nombreLower.includes('conjunto');
+
+  if (esPrenda) {
+    if (nombreLower.includes('zapato')) tipo = 'zapato';
+    else if (nombreLower.includes('camiseta') || nombreLower.includes('conjunto')) tipo = 'camiseta';
+    else if (nombreLower.includes('short') || nombreLower.includes('pantalon')) tipo = 'short';
+  } else {
+    tipo = 'accesorio'; // Nuevo tipo para productos sin tallas
+  }
+
+  // Configurar tallas solo para prendas
+  let tallas = [];
+  if (esPrenda) {
+    switch(tipo) {
+      case 'zapato': tallas = Array.from({length: 9}, (_, i) => 36 + i); break;
+      case 'camiseta': tallas = ['XS', 'S', 'M', 'L', 'XL']; break;
+      case 'short': tallas = ['S', 'M', 'L', 'XL']; break;
+    }
+  }
+
+  // Crear item
+  const item = {
+    nombre,
+    precio,
+    tipo,
+    cantidad: 1,
+    esPrenda // Nueva propiedad booleana
+  };
+
+  // Solo agregar tallas y género si es prenda
+  if (esPrenda) {
+    item.talla = tallas[0];
+    item.tallas = tallas;
+    item.genero = 'Hombre';
+  }
+
+  // Verificar si ya existe
+  const productoExistente = carrito.find(p => p.nombre === nombre);
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push(item);
+  }
+
+  actualizarContadorCarrito();
+  renderizarCarrito();
+  mostrarNotificacion(`${nombre} añadido al carrito`);
+
+
+  // Actualizar el contador del carrito y el modal
+  actualizarContadorCarrito();
+  renderizarCarrito();
+
+  // Mostrar una notificación
+  mostrarNotificacion(`${nombre} añadido al carrito`);
+}
 
 // Función para agregar productos al carrito
 function agregarAlCarrito(nombre, tipo, precio) {
@@ -117,6 +191,63 @@ function renderizarCarrito() {
   const contenedor = document.getElementById('lista-carrito');
   const carritoVacio = document.getElementById('carrito-vacio');
   const carritoResumen = document.getElementById('carrito-resumen');
+
+  carrito.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <div class="row align-items-center">
+        <div class="col-md-2 text-center mb-2 mb-md-0">
+          <i class="fas fa-${iconoProducto(item.tipo)} fa-2x text-burnt-amber"></i>
+        </div>
+        
+        <div class="col-md-4 mb-2 mb-md-0">
+          <h5 class="mb-0">${item.nombre}</h5>
+          <p class="text-muted mb-0">${formatearPrecio(item.precio)}</p>
+        </div>
+        
+        <div class="col-md-5 mb-2 mb-md-0">
+          <div class="row g-2">
+            ${item.esPrenda ? `
+              <!-- Selector de talla solo para prendas -->
+              <div class="col-sm-4">
+                <select class="form-select form-select-sm" onchange="cambiarTalla(${index}, this.value)">
+                  ${item.tallas.map(t => `
+                    <option value="${t}" ${item.talla === t ? 'selected' : ''}>${t}</option>
+                  `).join('')}
+                </select>
+                <label class="form-text">Talla</label>
+              </div>
+            ` : ''}
+            
+            <!-- Selector de cantidad (siempre visible) -->
+            <div class="${item.esPrenda ? 'col-sm-4' : 'col-sm-8'}">
+              <input type="number" class="form-control form-control-sm" 
+                     min="1" max="10" value="${item.cantidad}" 
+                     onchange="cambiarCantidad(${index}, this.value)">
+              <label class="form-text">Cantidad</label>
+            </div>
+            
+            ${item.esPrenda ? `
+              <!-- Selector de género solo para prendas -->
+              <div class="col-sm-4">
+                <select class="form-select form-select-sm" onchange="cambiarGenero(${index}, this.value)">
+                  <option value="Hombre" ${item.genero === 'Hombre' ? 'selected' : ''}>Hombre</option>
+                  <option value="Mujer" ${item.genero === 'Mujer' ? 'selected' : ''}>Mujer</option>
+                </select>
+                <label class="form-text">Género</label>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+        
+        <div class="col-md-1 text-end">
+          <i class="fas fa-trash cart-item-remove" onclick="eliminarDelCarrito(${index})"></i>
+        </div>
+      </div>
+    `;
+    contenedor.appendChild(div);
+  });
   
   // Limpiar el contenedor
   contenedor.innerHTML = '';
@@ -377,7 +508,22 @@ function finalizarCompra() {
   actualizarContadorCarrito();
 }
 
-// 🔹 Persona 4: Animaciones en secciones (scroll, aparición, etc)
 
+// Contaco, llenar formulario de contacto, permite limpiar, evaluar que toda la info este ingresada correctamente
 
-// 🔹 Persona 5: Funciones generales, validaciones, o scroll suave
+document.getElementById("contact-form").addEventListener("submit", function(e) { 
+  e.preventDefault(); // asi no se recarga la página
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  const status = document.getElementById("form-status");
+
+  if (name && email && message) {
+    status.textContent = "¡Gracias por tu mensaje, " + name + "!";
+    this.reset();
+  } else {
+    status.textContent = "Por favor completa todos los campos.";
+    status.style.color = "red";
+  }
+});   

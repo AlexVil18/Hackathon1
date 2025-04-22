@@ -1,38 +1,171 @@
+/* Variables de colores */
 :root {
-  --sunburst-orange: #FB8500;
-  --pumpkin-spice: #D06200;
-  --burnt-amber: #A54000;
-  --cinnamon-flame: #7E1C00;
-  --deep-garnet: #5B0000;
-}
-
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --sunburst-orange: #FB8500;
+    --pumpkin-spice: #D06200;
+    --burnt-amber: #A54000;
+    --cinnamon-flame: #7E1C00;
+    --deep-garnet: #5B0000;
   }
-  
-  /* 🔹 Persona 1: Header + Navbar + Hero */
+
   header {
     /* Estilos para el header */
+    background: #d06200;
+  }
+  #navbarSupportedContent {
+    display: flex;
+  }
+  .imgLogo img {
+    transition: all 0.3s;
+  }
+  .imgLogo img:hover{
+    transform: scale(1.3);
+  }
+  .imgLogo{
+    cursor: pointer;
+  }
+  a{
+    text-align: center;
+    margin: 1em
+  }
+  .nav-item .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+  }
+  .nav-item .nav-link:hover {
+    color: #ffbf87 !important;
+    transform: scale(1.1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+  }
+  .nav-emji .nav-link {
+    border-radius: 30%;
+    width: 3em;
+    height: auto;
+    transition: background-color 0.3s ease;   
+  }
+  .nav-emji .nav-link:hover {  
+    background-color: #d06200;
+  }
+  .bg-victory {
+    background-color: #730e20;
+  }
+  .bg-victory .imgWhatsapp img {
+    height: 2.5em;
+    width: auto;
+    transition: all 0.3s;
+  }
+  .bg-victory .imgWhatsapp img:hover{
+    transform: scale(1.2);
+  }
+  .bg-victory .imgWhatsapp{
+    cursor: pointer;
+  }
+  .titulo1{
+    padding-top: 1em;
+  }
+  .subtitulo1{
+    padding-bottom: 1em;
+  }
+  .titulo1, .subtitulo1{  
+    text-align: center;
+    color: #ffffff;
+  } 
+
+  /* Estilos generales */
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    position: relative;
   }
   
-
-
-  /* 🔹 Persona 2: Productos */
-/* Orangeﾠ#FB8500ﾠNaranja vibrante, muy llamativo
-Pumpkin Spiceﾠ#D06200ﾠNaranja tostado, cálido y otoñal
-Burnt Amberﾠ#A54000ﾠMarrón rojizo profundo
-Cinnamon Flameﾠ#7E1C00ﾠRojo canela intenso
-Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
-
+  h1, h2, h3, .navbar-brand {
+    font-family: 'Anton', sans-serif;
+  }
+  
+  .section-title {
+    color: var(--cinnamon-flame);
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--sunburst-orange);
+  }
+  
+  /* Utilidades de colores */
+  .bg-sunburst { background-color: var(--sunburst-orange) !important; }
+  .bg-pumpkin { background-color: var(--pumpkin-spice) !important; }
+  .bg-burnt-amber { background-color: var(--burnt-amber) !important; }
+  .bg-cinnamon { background-color: var(--cinnamon-flame) !important; }
+  .bg-dark-garnet { background-color: var(--deep-garnet) !important; }
+  
+  .text-sunburst { color: var(--sunburst-orange) !important; }
+  .text-pumpkin { color: var(--pumpkin-spice) !important; }
+  .text-burnt-amber { color: var(--burnt-amber) !important; }
+  .text-cinnamon { color: var(--cinnamon-flame) !important; }
+  .text-dark-garnet { color: var(--deep-garnet) !important; }
+  
+  /* Botones personalizados */
+  .btn-sunburst {
+    background-color: var(--sunburst-orange);
+    border-color: var(--sunburst-orange);
+    color: white;
+    transition: all 0.3s;
+  }
+  
+  .btn-sunburst:hover {
+    background-color: var(--pumpkin-spice);
+    border-color: var(--pumpkin-spice);
+    color: white;
+  }
+  
+  .btn-cinnamon {
+    background-color: var(--cinnamon-flame);
+    border-color: var(--cinnamon-flame);
+    color: white;
+    transition: all 0.3s;
+  }
+  
+  .btn-cinnamon:hover {
+    background-color: var(--burnt-amber);
+    border-color: var(--burnt-amber);
+    color: white;
+  }
+  
+  /* Navbar */
+  .navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
  /* Color fondo productos */
 
  .bg-1{
-  background-color: #D06200;
+  background: linear-gradient(#FB8500, #D06200,#A54000, #7E1C00); /* Para animación fondo gradient*/
+  background-size: 300% 300%;
+  animation: bg 10s ease infinite;
  }
+
+ /*animación fondo gradient*/
+@keyframes bg{
+  0%{
+      background-position: 0% 50%; 
+  } 
+  50%{
+      background-position: 100% 100%;        
+  }
+  100%{
+      background-position: 0% 50%;
+
+  }
+}
+
+
  /* Color titulo  productos */
 
  .bg-2{
@@ -57,6 +190,10 @@ Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
   object-fit: cover;
 }
 
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
   /* Animaciones hover y click */
 .producto-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -76,29 +213,14 @@ Deep Garnetﾠ#5B0000ﾠVino oscuro, elegante y dramático */
   transform: scale(0.95);
   background-color: #A54000; 
 }
+
+/* Estilos Productos Deportivos */
+
+#productos-Deportivos{
+  background-color: #D06200;
+}
   
-  /* 🔹 Persona 3: Carrito */
-  #carrito {
-    /* Estilos para el carrito flotante o modal */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 🔹 Persona 1: Header + Navbar + Hero */
-header {
-  /* Estilos para el header */
-}
-
-/* 🔹 Persona 2: Productos */
-#productos {
-  /* Estilos para la grilla de productos */
-}
-
-/* 🔹 Persona 3: Carrito */
-#carrito {
-  /* Estilos para el carrito */
+  /* Botón flotante del carrito */
   .cart-floating-button {
     position: fixed;
     bottom: 20px;
@@ -150,7 +272,7 @@ header {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #FB8500; /* Sunburst Orange */
+    background-color: #FB8500; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +288,7 @@ header {
     position: absolute;
     top: -10px; /* Ajusta la posición vertical para que quede fuera del círculo */
     right: -10px; /* Ajusta la posición horizontal para que quede fuera del círculo */
-    background-color: #D06200; /* Pumpkin Spice */
+    background-color: #D06200; 
     color: white;
     font-size: 0.8rem;
     font-weight: bold;
@@ -223,43 +345,220 @@ header {
   .cart-floating-button {
     animation: float 3s ease-in-out infinite;
   }
-}
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .cart-floating-button {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .cart-floating-button img {
+      width: 28px;
+      height: 28px;
+    }
+    
+    .cart-counter {
+      width: 20px;
+      height: 20px;
+      font-size: 0.7rem;
+    }
 
-/* 🔹 Persona 4: Servicios */
-/* 🔤 Tipografías */
+    
+  }
+
+  #servicios{
+    background-color: #D06200;
+  }
+
+  .cont_cards{
+    background-color: #730e20;
+    border-radius: 1rem
+  }
+
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 18rem;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  .flip-card-back {
+    background-color: #A54000;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  /* 🔤 Tipografías */
+
+
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  color: #222;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #222;
+  }
+
+  /* Sección contacto */
+.contact {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+}
+/* Titulo contacto*/
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
 }
 
- /* Utilidades de colores */
- .bg-sunburst { background-color: var(--sunburst-orange) !important; }
- .bg-pumpkin { background-color: var(--pumpkin-spice) !important; }
- .bg-burnt-amber { background-color: var(--burnt-amber) !important; }
- .bg-cinnamon { background-color: var(--cinnamon-flame) !important; }
- .bg-dark-garnet { background-color: var(--deep-garnet) !important; }
- 
- .text-sunburst { color: var(--sunburst-orange) !important; }
- .text-pumpkin { color: var(--pumpkin-spice) !important; }
- .text-burnt-amber { color: var(--burnt-amber) !important; }
- .text-cinnamon { color: var(--cinnamon-flame) !important; }
- .text-dark-garnet { color: var(--deep-garnet) !important; }
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; #contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;/*La propiedad los organiza en columna */
+}}
 
-/* Títulos principales y subtítulos */
-h1, h2, h3, h4, h5, h6, .titulo, .subtitulo {
-  font-family: 'Special Gothic Expanded One', sans-serif;
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #a8a8a8;
+  border-radius: 5px;
+  border: 2px solid #730e20; 
 }
 
-/* Parrafos, botones, inputs, texto general */
-p, span, a, li, input, button, label {
-  font-family: 'Roboto', sans-serif;
-}  
+#contact-form textarea {
+  resize: vertical;
+  height: 120px;
+}
 
-/* 🔹 Persona 5: Footer + Contacto */
+#contact-form button {
+  background-color: #D06200;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #730e20;
+}
+
+#form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+
 footer {
-  /* Estilos para el pie de página */
+  background-color:#730e20;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column { /*Editamos todas las columnas*/
+  flex: 1;        /*Las columnas se distribuyen equitativamente*/
+  min-width: 300px; /*tamaño minimo de las columnas*/
+  margin: 10px;     
+}
+
+.footer-column h4 { /*Editamos el h4 osea todos los titulos */
+  font-size: 1rem;
+  margin-bottom: 1rem; /*1 rem equivale a 16px para que se vea responsive*/
+  color: #fff9e3;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;  /*Elimina viñetas de la lista*/
+  padding: 0;         /*Elimina espacios predeterminados de la lista*/
+}
+
+.footer-column ul li {
+  margin: 8px 0;    
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none; /*Elimina el subrayado del link*/
+  font-size: 14px;
+  transition: color 0.3s ease; /*Efecto al pasar el cursos*/
+}
+
+.footer-column ul li a:hover {
+  color: #ee6073;   /*Cambia de color con el efecto*/
+}
+
+.logos {
+  display: flex;   /*Propiedad flexible*/
+  gap: 1rem;    /*Espacio entre los logos*/
+}
+
+.logos li img {
+  width: 40px;   /*Tamaño de los logos*/
+  height: auto;
+}
+.footer-der {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.footer-der p {
+  text-align: center;
+}
+
+
+  /* Agrega este código al final de tu CSS */
+#cartModal .col {
+  background-color: transparent !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Opcional: Ajuste de posición para fixed header */
+section {
+  scroll-margin-top: 80px; /* Ajusta según la altura de tu header */
 }
