@@ -27,8 +27,70 @@ header {
 }
 
 /* 🔹 Persona 5: Footer + Contacto */
-footer {
+/* Sección contacto */
+.contact {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+}
+/* Titulo contacto*/
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; #contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;/*La propiedad los organiza en columna */
+}}
+
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #a8a8a8;
+  border-radius: 5px;
+  border: 2px solid #730e20; 
+}
+
+#contact-form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+#contact-form button {
   background-color: #D06200;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #730e20;
+}
+
+#form-status {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+
+footer {
+  background-color:#730e20;
   color: #fff;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
@@ -81,6 +143,14 @@ footer {
 .logos li img {
   width: 40px;   /*Tamaño de los logos*/
   height: auto;
+}
+.footer-der {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.footer-der p {
+  text-align: center;
 }
 
 @media (max-width: 768px) {

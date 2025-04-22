@@ -33,44 +33,65 @@
     <!-- Aquí van los servicios que ofrece la tienda y testimonios -->
   </section>
 
+  
+
+  
+
   <!-- 🔹 Persona 5: Footer + contacto + optimización general -->
+  <section>
+  <section class="contact"> 
+    <h2>Contáctanos</h2>
+    <form id="contact-form"> <!--Crea un formulario-->
+      <input type="text" id="name" placeholder="Tu nombre" required> <!--Requiere escribir el nombre-->
+      <input type="email" id="email" placeholder="Tu correo electrónico" required><!--Requiere escribir el correo-->
+      <textarea id="message" placeholder="Tu mensaje" required></textarea> <!--Requiere escribir el mensaje-->
+      <button type="submit">Enviar</button> <!--Botón-->
+     <p id="form-status"></p> <!--Parrafo vacio-->
+    </form>
+  </section>
+    <!--Footer-->
   <footer>
-    <div class="footer-container">
-      <div class="footer-column">
+    <div class="footer-container"> <!--contenedor de columnas de footer-->
+      <div class="footer-column"> <!--columna 1 footer-->
         <h4>Redes Sociales</h4>
-        <ul class="logos">
-          <li><a href="#"><img src="instagram.png" alt="insta"></a></li>
-          <li><a href="#"><img src="facebook.png" alt="face"></a></li>
-          <li><a href="#"><img src="tiktok_3116491.png" alt="tiktok"></a></li>
+    <ul class="logos">
+      <li><a href="#"><img src="instagram.png" alt="insta"></a></li>
+      <li><a href="#"><img src="facebook.png" alt="face"></a></li>
+      <li><a href="#"><img src="tiktok_3116491.png" alt="tiktok"></a></li>
           
-        </ul>
-      </div>
+    </ul>
+    </div>
       
-      <div class="footer-column">
-        <h4>Enlaces</h4>
-        <ul>
-          <li><a href="terminosycondicionesvictorysport.pdf" download>Términos y Condiciones</a></li>
-          <li><a href="Política de privacidad VictorySport.pdf" download>Política de Privacidad</a></li>
-        </ul>
-      </div>
+  <div class="footer-column"><!--columna 2 footer-->
+       <h4>Enlaces</h4>
+       <ul>
+       <li><a href="terminosycondicionesvictorysport.pdf" download>Términos y Condiciones</a></li>
+      <li><a href="Política de privacidad VictorySport.pdf" download>Política de Privacidad</a></li>
+         <!--El download es para descargar un archivo-->
+    </ul> 
+  </div>
   
-      <div class="footer-column">
-        <h4>Medios de Pago</h4>
-        <ul class="logos">
-          <li><img src="visa.png" alt="Visa"></li>
-          <li><img src="mastercard.png" alt="MasterCard"></li>
-          <li><img src="nequi.png" alt="nequi"></li>
-          <li><img src="bancolombia.png" alt="bancolombia"></li>
-        </ul>
-      </div>
+  <div class="footer-column"> <!--columna 3 footer-->
+       <h4>Medios de Pago</h4>
+    <ul class="logos">
+      <li><img src="visa.png" alt="Visa"></li>
+      <li><img src="mastercard.png" alt="MasterCard"></li>
+      <li><img src="nequi.png" alt="nequi"></li>
+     <li><img src="bancolombia.png" alt="bancolombia"></li>
+   </ul>
+  </div>
   
-      <div class="footer-column">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="somosvictroysport@gmail.com">somosvictorysport@gmail.com</a></li>
-          <li><a href="tel:+123456789">+1 234 567 89</a></li>
-        </ul>
-      </div>
+  <div class="footer-column"> <!--columna 4 footer-->
+    <h4>Contacto</h4>
+      <ul>
+         <li><a href="somosvictroysport@gmail.com">somosvictorysport@gmail.com</a></li>
+        <li><a href="tel:+123456789">+1 234 567 89</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="footer-der"> <!--texto footer debajo de el contenedor-->
+      <p>&copy; 2025 Victory Sport. Todos los derechos reservados.</p>
     </div>
   </footer>
-  
+<!--conexión a JS-->
+  <script src="script.js"></script> 
