@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tienda Deportiva</title>
-      
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-      
-        <link rel="stylesheet" href="style.css" />
-      </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Deportiva</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
 
   <!-- 🔹 Persona 1: Header + Navbar + Hero principal -->
   <header>
     <!-- Aquí va el logo, la barra de navegación y el banner inicial -->
+    <nav class="navbar navbar-expand-lg bg-victory">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="logov.png" alt="Bootstrap" width="90" height="35"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Mujer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hombre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Niño</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos">OUTLET🤑</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">⚽</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">🏀</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">🏐</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">🏈</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">🎾</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">⛸️</a>
+            </li>
+            <li class="nav-emji">
+              <a class="nav-link" href="#">🥊</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="imgWhatsapp">
+          <a href="footer">
+            <img src="Whatsapp.png" alt="img_logo_whatsapp">
+          </a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+      <h1 class="titulo1">!Equípate para ganar¡</h1>
+      <br>
+      <h3 class="subtitulo1">La mejor selección de artículos deportivos</h3>
+  </div>
   </header>
 
   <!-- 🔹 Persona 2: Sección de productos destacados + cards interactivas -->
@@ -143,7 +204,10 @@
   <footer>
     <!-- Aquí va la información de contacto, redes sociales y el pie de página -->
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
